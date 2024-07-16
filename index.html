@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Code Display</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+        pre {
+            background-color: #f0f0f0;
+            padding: 10px;
+            border-radius: 5px;
+            white-space: pre-wrap;
+        }
+    </style>
+</head>
+<body>
+    <h2>JavaScript Code Display</h2>
+    
+    <h3>Function to Check Unique Digits:</h3>
+    <pre>
+function hasUniqueDigits(num) {
+    // Convert number to string to iterate over each digit
+    let digits = num.toString();
+    
+    // Use a Set to keep track of seen digits
+    let seen = new Set();
+    
+    // Iterate through each digit
+    for (let digit of digits) {
+        // If digit is already in the Set, return false (not unique)
+        if (seen.has(digit)) {
+            return false;
+        }
+        // Otherwise, add digit to the Set
+        seen.add(digit);
+    }
+    
+    // If we finish the loop without finding duplicates, return true
+    return true;
+}
+    </pre>
+    
+    <h3>Function to Calculate Factorial Expression:</h3>
+    <pre>
+function factorialExpression(num) {
+    // Edge case: factorial of 0 is 1
+    if (num === 0) {
+        return "0!=1";
+    }
+    
+    // Initialize variables
+    let factorial = 1;
+    let expression = `${num}!=`;
+    
+    // Calculate factorial
+    for (let i = num; i > 0; i--) {
+        factorial *= i;
+        expression += i;
+        if (i > 1) {
+            expression += '*';
+        }
+    }
+    
+    // Append the result to the expression
+    expression += `=${factorial}`;
+    
+    return expression;
+}
+    </pre>
+
+</body>
+
+</html>
